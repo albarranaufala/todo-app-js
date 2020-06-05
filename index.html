@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mw-500px my-3 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="font-weight-bold mb-3 text-center">To Do List</h1>
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="input-todo" placeholder="To Do Baru">
+                        </div>
+                        <button id="btn-submit" type="submit" class="btn btn-primary btn-block">Simpan</button>
+                        <div id="btn-cancel"></div>
+                    </form>
+                </div>
+            </div>
+            <div id="list" class="mt-3">
+                <ul class="list-group m-0 text-center"><i>Kosong</i></ul>
+            </div> 
+            <div class="separator my-3">Selesai/Terhapus</div>
+            <div id="removed-list" class="">
+                <ul class="list-group m-0 text-center"><i>Kosong</i></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
