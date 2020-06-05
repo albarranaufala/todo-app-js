@@ -77,7 +77,7 @@ function list(text, index){
 }
 
 function removedList(text, index){
-    return '<li class="list-group-item  d-flex justify-content-between align-items-center"><div><s>'+text+'</s></div><div class="d-flex flex-nowrap"><button type="button" class="btn btn-danger" onclick="removeRemovedList('+index+')">Hapus</button></div></li>'
+    return '<li class="list-group-item  d-flex justify-content-between align-items-center"><div><s>'+text+'</s></div><div class="d-flex flex-nowrap"><button type="button" class="btn btn-info mr-1" onclick="cancelRemove('+index+')">Kembalikan</button><button type="button" class="btn btn-danger" onclick="removeRemovedList('+index+')">Hapus</button></div></li>'
 }
 
 function remove(index){
@@ -106,6 +106,17 @@ function edit(index){
     input.focus()
     btnSubmit.classList.toggle('btn-success')
     btnCancel.innerHTML = '<button class="btn btn-outline-danger btn-block mt-3" type="button" onclick="cancelEdit()">Batal</button>'
+}
+
+function cancelRemove(index){
+    let cancelRemoveTodo = removedTodos[index]
+    removedTodos.splice(index,1)
+    localStorage.setItem('removedTodos', JSON.stringify(removedTodos))
+    showRemovedTodos(removedTodos)
+
+    listToDo.push(cancelRemoveTodo)
+    localStorage.setItem('listToDo', JSON.stringify(listToDo))
+    showTodos(listToDo)
 }
 
 function cancelEdit(){
